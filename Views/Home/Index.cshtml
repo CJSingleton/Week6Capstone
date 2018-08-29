@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3><a href="/Home/NewTaskSetup">Add New Task</a></h3>
+
+<br />
+
+<table border="0" class="table">
+    @if (ViewBag.Tasks != null)
+    {
+
+        foreach (var task in ViewBag.Tasks)
+        {
+                <tr>
+                    <td>@task.description</td>
+                    <td>@task.duedate</td>
+                    <td>@task.ownerid</td>
+                    @*<td><input type="checkbox" onclick="javascript:form1.submit();"/></td>*@
+                    <td><a href="/Home/DeleteTask?taskid=@task.taskid">Delete</a></td>
+                    <td><a href="/Home/CompleteTask?taskid=@task.taskid">Complete Task</a></td>
+                </tr>
+        }
+    }
+</table>
+
+    @*@*<td><a href="/Home/DeleteItem?itemid=@item.itemid" onclick="return confirm('Are you sure?')">DELETE</a></td>
+        <td><a href="/Home/ItemDetails?itemid=@item.itemid">UPDATE</a></td>*@

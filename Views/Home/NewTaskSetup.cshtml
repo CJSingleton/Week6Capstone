@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "NewTaskSetup";
+}
+<br/>
+<h3>Fill out the form below and click 'Add to List' to add a new task:</h3>
+<br/>
+<form action="/Home/CreateTask" method="post">
+    <label>Description: </label> <input type="text" name="description" class="form-control" required />
+    <label>Assigned to: </label> <input type="number" name="ownerid" class="form-control" required/>
+    <label>Due Date: </label> <input type="date" name="duedate" class="form-control" required/>
+    <br/>
+    <input type="submit" value="Add to List" class="form-group-sm" />
+</form>
+
